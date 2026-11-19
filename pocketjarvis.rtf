@@ -1,0 +1,610 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2870
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Bold;\f1\froman\fcharset0 Times-Roman;\f2\fmodern\fcharset0 Courier;
+\f3\froman\fcharset0 TimesNewRomanPSMT;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue233;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c0\c0\c93333;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid1\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid101\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid201\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid301\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid401\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid5}
+{\list\listtemplateid6\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid501\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid6}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sa321\partightenfactor0
+
+\f0\b\fs48 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Build Your Own Pocket Jarvis\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 Nov 19, 2026 \'b7 @Brandon Rose\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 How it works\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 The gadget is only a remote with a face. The real "Jarvis" is an AI agent running on a computer or server, and the gadget just carries your words to it and shows the reply.\
+There are three parts:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0
+\f0\b \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	1	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The device.
+\f1\b0  An ESP32 board with a screen, a mic and buttons. It shows a pet, records your voice or reads a button press, and sends that over Wi\uc0\u8209 Fi.\
+\ls1\ilvl0
+\f0\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The bridge.
+\f1\b0  A small plugin, or a tiny web server, that runs next to the agent. It receives what the device sends and passes it to the agent, then returns the answer in a short form the device can draw.\
+\ls1\ilvl0
+\f0\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	3	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The brain.
+\f1\b0  The agent (Hermes Agent in the reel). It holds the memory, tools and AI model, and it decides what to say or do.\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf0 The device reaches the bridge in one of three ways, tried in order: home Wi\uc0\u8209 Fi, then Bluetooth to the PC as a backup, then Tailscale when you're away from home.\
+\pard\pardeftab720\partightenfactor0
+\cf0 [embed: node/95d1c63a-0721]\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 Choose your path\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 My recommendation is the 
+\f0\b lean route
+\f1\b0 : the M5Stack StopWatch, with Hermes on your M3 MacBook Pro using a cloud AI model. You skip the $2,000+ graphics card the reel's local models need, and you can build it in a weekend.\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw3840 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth1306\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2160
+\clvertalc \clshdrawnil \clwWidth3451\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth3995\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx6480
+\clvertalc \clshdrawnil \clwWidth3028\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\qc\partightenfactor0
+
+\f0\b \cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sa240\qc\partightenfactor0
+\cf0 Reel route\cell 
+\pard\intbl\itap1\pardeftab720\sa240\qc\partightenfactor0
+\cf0 Lean route (recommended)\cell 
+\pard\intbl\itap1\pardeftab720\sa240\qc\partightenfactor0
+\cf0 Friend's route\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw3840 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth1306\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2160
+\clvertalc \clshdrawnil \clwWidth3451\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth3995\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx6480
+\clvertalc \clshdrawnil \clwWidth3028\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+
+\f1\b0 \cf0 Device\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 M5Stack StopWatch\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 M5Stack StopWatch\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Bare ESP32 + breadboard parts\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw3840 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth1306\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2160
+\clvertalc \clshdrawnil \clwWidth3451\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth3995\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx6480
+\clvertalc \clshdrawnil \clwWidth3028\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 AI model\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Local (Qwen 27B, GPT\uc0\u8209 OSS 120B)\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Cloud API (Claude, GPT or OpenRouter)\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Either\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw3840 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth1306\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2160
+\clvertalc \clshdrawnil \clwWidth3451\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth3995\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx6480
+\clvertalc \clshdrawnil \clwWidth3028\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Brain runs on\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Gaming PC with a big GPU\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Your Mac, or a small always-on server\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Either\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw3840 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth1306\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2160
+\clvertalc \clshdrawnil \clwWidth3451\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth3995\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx6480
+\clvertalc \clshdrawnil \clwWidth3028\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Up-front cost\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 $2,000+\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 About $50\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 About $40\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw3840 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth1306\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2160
+\clvertalc \clshdrawnil \clwWidth3451\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth3995\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx6480
+\clvertalc \clshdrawnil \clwWidth3028\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Running cost\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Electricity\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 About $1\'9610/mo in API use\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Same as the others\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw3840 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth1306\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2160
+\clvertalc \clshdrawnil \clwWidth3451\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth3995\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx6480
+\clvertalc \clshdrawnil \clwWidth3028\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Difficulty\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 High\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Low to medium\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Medium (wiring and soldering)\cell \lastrow\row
+\pard\pardeftab720\sa240\partightenfactor0
+\cf0 If you'd like it fully private later, you can switch Hermes to a local model with Ollama on the Mac. The device side doesn't change.\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 Shopping list\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs24 \cf0 Lean route (one device does it all).
+\f1\b0  The {\field{\*\fldinst{HYPERLINK "https://docs.m5stack.com/en/products/sku/C152"}}{\fldrslt \cf3 \ul \ulc3 \strokec3 M5Stack StopWatch}} already has everything built in: an ESP32\uc0\u8209 S3 chip, a 1.75" round AMOLED touchscreen, a mic, a speaker, a battery, Wi\u8209 Fi and Bluetooth ({\field{\*\fldinst{HYPERLINK "https://www.cnx-software.com/2026/05/22/m5stack-stopwatch-esp32-s3-devkit-offers-1-75-inch-touch-amoled-microphone-speaker-and-gpio-expansion/"}}{\fldrslt \cf3 \ul \ulc3 \strokec3 specs}}).\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw2880 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth2800\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2880
+\clvertalc \clshdrawnil \clwWidth1542\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx5760
+\clvertalc \clshdrawnil \clwWidth6318\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\qc\partightenfactor0
+
+\f0\b \cf0 Item\cell 
+\pard\intbl\itap1\pardeftab720\sa240\qc\partightenfactor0
+\cf0 Price (approx.)\cell 
+\pard\intbl\itap1\pardeftab720\sa240\qc\partightenfactor0
+\cf0 Where\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw2880 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth2800\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2880
+\clvertalc \clshdrawnil \clwWidth1542\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx5760
+\clvertalc \clshdrawnil \clwWidth6318\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+
+\f1\b0 \cf0 M5Stack StopWatch Dev Kit\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 $45\'9660\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 DigiKey (fastest in the US), {\field{\*\fldinst{HYPERLINK "https://openelab.com/products/m5stack-stopwatch-dev-kit-esp32-s3"}}{\fldrslt \cf3 \ul \ulc3 \strokec3 OpenELAB}}, AliExpress (2\'964 weeks)\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw2880 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth2800\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2880
+\clvertalc \clshdrawnil \clwWidth1542\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx5760
+\clvertalc \clshdrawnil \clwWidth6318\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 USB\uc0\u8209 C 
+\f0\b data
+\f1\b0  cable\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 $8\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Any; charge-only cables won't flash firmware\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw2880 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth2800\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2880
+\clvertalc \clshdrawnil \clwWidth1542\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx5760
+\clvertalc \clshdrawnil \clwWidth6318\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 AI API credit\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 $5\'9610 to start\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Anthropic, OpenAI or OpenRouter\cell \lastrow\row
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b \cf0 Friend's route (DIY desk version).
+\f1\b0  Prices below are typical Amazon prices, so treat them as approximate.\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw2880 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth5631\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2880
+\clvertalc \clshdrawnil \clwWidth1542\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx5760
+\clvertalc \clshdrawnil \clwWidth6931\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\qc\partightenfactor0
+
+\f0\b \cf0 Item\cell 
+\pard\intbl\itap1\pardeftab720\sa240\qc\partightenfactor0
+\cf0 Price (approx.)\cell 
+\pard\intbl\itap1\pardeftab720\sa240\qc\partightenfactor0
+\cf0 Why\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw2880 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth5631\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2880
+\clvertalc \clshdrawnil \clwWidth1542\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx5760
+\clvertalc \clshdrawnil \clwWidth6931\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+
+\f1\b0 \cf0 ESP32\uc0\u8209 S3 DevKit (N16R8 if possible)\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 $10\'9615\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 The S3 has more memory for audio and graphics than the classic ESP32\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw2880 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth5631\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2880
+\clvertalc \clshdrawnil \clwWidth1542\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx5760
+\clvertalc \clshdrawnil \clwWidth6931\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 2.8" or 3.5" SPI TFT screen (ILI9341 or ST7796)\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 $12\'9618\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 The pet's face\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw2880 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth5631\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2880
+\clvertalc \clshdrawnil \clwWidth1542\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx5760
+\clvertalc \clshdrawnil \clwWidth6931\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 INMP441 I2S microphone\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 $5\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Voice input\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw2880 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth5631\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2880
+\clvertalc \clshdrawnil \clwWidth1542\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx5760
+\clvertalc \clshdrawnil \clwWidth6931\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 MAX98357A I2S amp + 3W speaker\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 $8\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Spoken replies\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw2880 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth5631\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2880
+\clvertalc \clshdrawnil \clwWidth1542\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx5760
+\clvertalc \clshdrawnil \clwWidth6931\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Tactile buttons, buzzer, half-size breadboard, jumper wires\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 $12\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Controls and wiring\cell \lastrow\row
+\pard\pardeftab720\sa240\partightenfactor0
+\cf0 For an all-in-one desk alternative with no wiring, the Espressif ESP32\uc0\u8209 S3\u8209 BOX\u8209 3 (about $45) comes with a screen, mics and a speaker.\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 Step 1: Set up the brain (Hermes Agent)\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 Get Hermes answering on your Mac before touching any hardware. If this step fails, nothing downstream will work.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0
+\f0\b \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	1	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Install Hermes.
+\f1\b0  Open Terminal on the Mac and run:
+\f2\fs26 curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash\uc0\u8232 
+\f1\fs24 \uc0\u8232 There's also a macOS desktop app on the {\field{\*\fldinst{HYPERLINK "https://hermes-agent.nousresearch.com/"}}{\fldrslt \cf3 \ul \ulc3 \strokec3 Hermes site}}.\
+\ls2\ilvl0
+\f0\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Connect a model.
+\f1\b0  Run 
+\f2\fs26 hermes setup
+\f1\fs24  and pick a provider, then paste your API key. For the lean route, choose a cloud model. For a free local option, install {\field{\*\fldinst{HYPERLINK "https://docs.ollama.com/integrations/hermes"}}{\fldrslt \cf3 \ul \ulc3 \strokec3 Ollama}} first and pick a small model your M3 can run.\
+\ls2\ilvl0
+\f0\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	3	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Talk to it once in the terminal
+\f1\b0  to confirm it answers. Tell it your name, timezone and what you want it to help with, since Hermes keeps persistent memory across sessions.\
+\ls2\ilvl0
+\f0\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	4	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Turn on the API server
+\f1\b0  so the device can reach it. Add these lines to 
+\f2\fs26 ~/.hermes/.env
+\f1\fs24 :
+\f2\fs26 API_SERVER_ENABLED=true\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	5	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 API_SERVER_KEY=pick-a-long-random-password\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	6	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 API_SERVER_HOST=0.0.0.0\uc0\u8232 
+\f1\fs24 \uc0\u8232 
+\f2\fs26 0.0.0.0
+\f1\fs24  lets other devices on your Wi\uc0\u8209 Fi connect. The default only allows the Mac itself.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0
+\f0\b \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	7	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Start it:
+\f1\b0  
+\f2\fs26 hermes gateway
+\f1\fs24 . You should see 
+\f2\fs26 API server listening on \'85:8642
+\f1\fs24 .\
+\ls2\ilvl0
+\f0\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	8	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Test it from Terminal:
+\f2\b0\fs26 curl http://localhost:8642/v1/chat/completions \\\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	9	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2   -H "Authorization: Bearer pick-a-long-random-password" \\\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	10	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2   -H "Content-Type: application/json" \\\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	11	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2   -d '\{"model":"hermes-agent","messages":[\{"role":"user","content":"Hello!"\}]\}'\uc0\u8232 
+\f1\fs24 \uc0\u8232 A JSON reply means the brain is ready. The full endpoint list is in the {\field{\*\fldinst{HYPERLINK "https://hermes-agent.nousresearch.com/docs/user-guide/features/api-server"}}{\fldrslt \cf3 \ul \ulc3 \strokec3 API server docs}}.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0
+\f0\b \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	12	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Find your Mac's local IP:
+\f1\b0  System Settings 
+\f3 \uc0\u8594 
+\f1  Wi\uc0\u8209 Fi 
+\f3 \uc0\u8594 
+\f1  Details (it looks like 
+\f2\fs26 192.168.1.42
+\f1\fs24 ). The device will call 
+\f2\fs26 http://<that IP>:8642
+\f1\fs24 .\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 Step 2: Set up dev tools and test the device\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 The goal here is a "hello world" on the device's screen, which proves your cable, drivers and upload all work.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls3\ilvl0
+\f0\b \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	1	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Install VS Code
+\f1\b0  and the 
+\f0\b PlatformIO
+\f1\b0  extension. Claude Code works well with PlatformIO projects. The Arduino IDE also works if you prefer it.\
+\ls3\ilvl0
+\f0\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Install Claude Code
+\f1\b0  on the Mac and open an empty project folder, for example 
+\f2\fs26 ~/pocket-jarvis
+\f1\fs24 .\
+\ls3\ilvl0
+\f0\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	3	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Plug in the device
+\f1\b0  with the data cable. In Terminal, 
+\f2\fs26 ls /dev/cu.*
+\f1\fs24  should show a new 
+\f2\fs26 usbmodem
+\f1\fs24  entry. If nothing appears, try another cable first, then check the {\field{\*\fldinst{HYPERLINK "https://docs.m5stack.com/en/products/sku/C152"}}{\fldrslt \cf3 \ul \ulc3 \strokec3 M5Stack StopWatch docs}} for how to enter download mode.\
+\ls3\ilvl0
+\f0\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	4	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Ask Claude Code for a blink test:
+\f1\b0 Create a PlatformIO project for the M5Stack StopWatch (ESP32-S3) using the M5Unified library. Show "Hello Brandon" in the center of the round screen and beep the speaker once. Then build and upload it.\uc0\u8232 \
+\ls3\ilvl0
+\f0\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	5	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Confirm
+\f1\b0  the text shows and the speaker beeps before moving on.\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b \cf0 Friend's route:
+\f1\b0  wire the parts first. Ask Claude Code for a pin map for your exact board and screen, and test each part on its own (screen, then mic, then speaker, then buttons) before you combine them.\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 Step 3: Build the firmware and bridge with Claude Code\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 Build in three small rounds, testing after each one. One giant prompt usually produces something that half works and is hard to fix.\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b \cf0 Round 1: text chat over Wi\uc0\u8209 Fi.
+\f1\b0  This is the same core as the reel.\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf0 Build two things in this repo. (1) A small Python bridge server for my Mac that sits next to Hermes Agent. It exposes POST /ask, forwards the text to Hermes at http://localhost:8642/v1/chat/completions with my API key from a .env file, and returns a short reply plus a "mood" field (happy, thinking, alert, sleepy). (2) ESP32 firmware for the M5Stack StopWatch that joins my Wi\uc0\u8209 Fi, shows a cute animated pet on the round AMOLED, sends a test question to the bridge when I press button A, and shows the reply in a speech bubble. Keep Wi\u8209 Fi details and the bridge address in a config file that's left out of git. Keep it simple and walk me through each step.\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b \cf0 Round 2: voice in and voice out.
+\f1\b0 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf0 Add voice. When I hold button A, record from the built-in mic and send the audio to the bridge. The bridge transcribes it (use OpenAI's speech-to-text API, or whisper.cpp locally if I say so), asks Hermes, then turns the reply into speech and sends back a short audio clip that the StopWatch plays through its speaker. Show "listening\'85" and "thinking\'85" pet animations while this happens.\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b \cf0 Round 3: the status screen
+\f1\b0 , like your friend's "5 tasks \'b7 26\'b0C \'b7 All in order."\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf0 Add an idle screen. Every 5 minutes the device calls GET /status on the bridge. The bridge asks Hermes for my open task count and a one-line status, and fetches the weather for Sherman Oaks from Open\uc0\u8209 Meteo (no key needed). Show the time, task count, temperature and status under the pet. If anything is overdue, make the pet look worried and vibrate once.\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b \cf0 Tips:
+\f1\b0  Have Claude Code explain each file the first time you see it. Commit to git after every round that works, so you can always roll back.\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 Step 4: Add the Bluetooth backup and remote access\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 This is what makes the device work outside your house. Add Tailscale first, since it's the more useful of the two.\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b \cf0 Tailscale (use it from anywhere).
+\f1\b0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls4\ilvl0\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	1	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Make a free {\field{\*\fldinst{HYPERLINK "https://tailscale.com/"}}{\fldrslt \cf3 \ul \ulc3 \strokec3 Tailscale}} account and install it on the Mac. Your Mac gets a private address like 
+\f2\fs26 100.x.y.z
+\f1\fs24  that works from any network.\
+\ls4\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Give Claude Code the reel's prompt:Add Tailscale so the pet can reach Hermes from any Wi\uc0\u8209 Fi, not just my home network. Put it behind an on/off switch in the pet's settings and keep my local Wi\u8209 Fi setup working as before.\uc0\u8232 \
+\ls4\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	3	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Expect Claude Code to recommend one of two setups. Either the device joins your tailnet directly, which is newer and trickier on an ESP32, or the bridge is published with 
+\f0\b Tailscale Funnel
+\f1\b0  as a private HTTPS URL. Funnel is simpler, but it puts the bridge on the internet, so keep the API key on and make it long.\
+\ls4\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	4	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Test it by turning off the device's home Wi\uc0\u8209 Fi and connecting it to your phone's hotspot.\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b \cf0 Bluetooth fallback (optional).
+\f1\b0  This only helps when the device is near the Mac and Wi\uc0\u8209 Fi is down. You can skip it.\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf0 Add Bluetooth as a backup. If the pet can't reach Hermes over Wi\uc0\u8209 Fi, have it switch to Bluetooth LE with my Mac automatically, and switch back to Wi\u8209 Fi when it's available again.\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b \cf0 The catch:
+\f1\b0  the Mac has to be awake and running 
+\f2\fs26 hermes gateway
+\f1\fs24 . In System Settings 
+\f3 \uc0\u8594 
+\f1  Energy, turn on "Prevent automatic sleeping when the display is off" while plugged in. For truly always-on, move Hermes to a small cloud server or an old computer later.\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 Step 5: Make it actually Jarvis\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 What makes it feel like Jarvis is mostly what the agent knows and can reach. The gadget is the easy part.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls5\ilvl0
+\f0\b \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Memory.
+\f1\b0  Hermes keeps memory across sessions. Feed it a starter profile: your projects, routines, people and preferences. It learns from there.\
+\ls5\ilvl0
+\f0\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Tasks.
+\f1\b0  Ask Hermes to keep a task list (it can use a file, Notion or Google Tasks through its tools). The status screen in Round 3 reads from it.\
+\ls5\ilvl0
+\f0\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Briefings.
+\f1\b0  Hermes can run scheduled jobs. Try: "Every weekday at 7:30am, prepare a 3-line briefing of my day and push it to the pet with a chime."\
+\ls5\ilvl0
+\f0\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Pet moods.
+\f1\b0  Tie the pet's face to real signals: happy when nothing's due, worried when something's overdue, sleepy after 11pm, excited when a message arrives.\
+\ls5\ilvl0
+\f0\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Phone backup.
+\f1\b0  Hermes also supports Telegram, so you can reach the same agent from your phone when the device is dead or at home.\
+\ls5\ilvl0
+\f0\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Polish.
+\f1\b0  Ask Claude Code for a wake word, for shaking the device to dismiss things (it has a motion sensor), and for battery-saving deep sleep between requests.\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 Troubleshooting\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw2880 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3219\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2880
+\clvertalc \clshdrawnil \clwWidth3977\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx5760
+\clvertalc \clshdrawnil \clwWidth7863\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\qc\partightenfactor0
+
+\fs24 \cf0 Problem\cell 
+\pard\intbl\itap1\pardeftab720\sa240\qc\partightenfactor0
+\cf0 Likely cause\cell 
+\pard\intbl\itap1\pardeftab720\sa240\qc\partightenfactor0
+\cf0 Fix\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw2880 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3219\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2880
+\clvertalc \clshdrawnil \clwWidth3977\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx5760
+\clvertalc \clshdrawnil \clwWidth7863\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+
+\f1\b0 \cf0 Mac doesn't see the device\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Charge-only cable, or not in download mode\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Swap the cable, then enter download mode (see the M5Stack docs)\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw2880 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3219\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2880
+\clvertalc \clshdrawnil \clwWidth3977\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx5760
+\clvertalc \clshdrawnil \clwWidth7863\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Device can't reach the bridge\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Hermes bound to 127.0.0.1, or the Mac firewall\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Set 
+\f2\fs26 API_SERVER_HOST=0.0.0.0
+\f1\fs24  and allow incoming connections for Python/Hermes\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw2880 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3219\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2880
+\clvertalc \clshdrawnil \clwWidth3977\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx5760
+\clvertalc \clshdrawnil \clwWidth7863\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Joins Wi\uc0\u8209 Fi at home but not elsewhere\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 ESP32 only supports 2.4 GHz\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Use a 2.4 GHz network or hotspot (turn on "Maximize Compatibility" on iPhone)\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw2880 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3219\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2880
+\clvertalc \clshdrawnil \clwWidth3977\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx5760
+\clvertalc \clshdrawnil \clwWidth7863\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Replies are slow\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Large model, or long replies\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Ask the bridge to cap replies at 2 sentences, and use a faster model for quick questions\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw2880 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3219\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2880
+\clvertalc \clshdrawnil \clwWidth3977\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx5760
+\clvertalc \clshdrawnil \clwWidth7863\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Garbled or quiet voice\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Mic sample rate mismatch\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Ask Claude Code to record 16 kHz mono WAV, which speech-to-text APIs expect\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw2880 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3219\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2880
+\clvertalc \clshdrawnil \clwWidth3977\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx5760
+\clvertalc \clshdrawnil \clwWidth7863\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Works, then stops overnight\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Mac went to sleep\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Change the sleep settings (Step 4), or move Hermes to an always-on machine\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trminw2880 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3219\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2880
+\clvertalc \clshdrawnil \clwWidth3977\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx5760
+\clvertalc \clshdrawnil \clwWidth7863\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Upload fails partway\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Out of memory, or the wrong board setting\cell 
+\pard\intbl\itap1\pardeftab720\sa240\partightenfactor0
+\cf0 Ask Claude Code to check the board config uses PSRAM and the 16 MB flash layout\cell \lastrow\row
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b \cf0 Security:
+\f1\b0  never put API keys in the device firmware. Keep them on the Mac in 
+\f2\fs26 .env
+\f1\fs24 , and let the device only know the bridge address and its own password.\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 Sources\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls6\ilvl0
+\f1\b0\fs24 \cf3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}{\field{\*\fldinst{HYPERLINK "https://hermes-agent.nousresearch.com/"}}{\fldrslt \expnd0\expndtw0\kerning0
+\ul \outl0\strokewidth0 \strokec3 Hermes Agent}}\cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  and its {\field{\*\fldinst{HYPERLINK "https://hermes-agent.nousresearch.com/docs/user-guide/features/api-server"}}{\fldrslt \cf3 \ul \ulc3 \strokec3 API server docs}}\
+\ls6\ilvl0\cf3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}{\field{\*\fldinst{HYPERLINK "https://docs.m5stack.com/en/products/sku/C152"}}{\fldrslt \expnd0\expndtw0\kerning0
+\ul \outl0\strokewidth0 \strokec3 M5Stack StopWatch docs}}\cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  and {\field{\*\fldinst{HYPERLINK "https://www.cnx-software.com/2026/05/22/m5stack-stopwatch-esp32-s3-devkit-offers-1-75-inch-touch-amoled-microphone-speaker-and-gpio-expansion/"}}{\fldrslt \cf3 \ul \ulc3 \strokec3 CNX Software specs write-up}}\
+\ls6\ilvl0\cf3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}{\field{\*\fldinst{HYPERLINK "https://docs.ollama.com/integrations/hermes"}}{\fldrslt \expnd0\expndtw0\kerning0
+\ul \outl0\strokewidth0 \strokec3 Ollama + Hermes integration}}\cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls6\ilvl0\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The original Instagram reel by thespenceryan ("building jarvis in your pocket")\
+}
